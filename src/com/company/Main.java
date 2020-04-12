@@ -1,67 +1,51 @@
 package com.company;
+public interface Messenger{
+      public void sendMessage();
 
-import java.util.Scanner;
+      public void getMessage();
+} public class Telegram implements Messenger {
+      public void sendMessage() {
 
-            public abstract class car {
-                  private String model;
-                  private String color;
-                  private int maxSpeed;
+            System.out.println("Отправляем сообщение в Telegram!");
+      }
 
-                  public abstract void gas();
+      public void getMessage() {
+            System.out.println("Читаем сообщение в Telegram!");
+      }
+} public class Viber implements Messenger {
+      public void sendMessage() {
 
-                  public abstract void brake();
+            System.out.println("Отправляем сообщение в Viber!");
+      }
 
-                  public String getModel() {
-                        return model;
-                  }
+      public void getMessage() {
+            System.out.println("Читаем сообщение в Viber!");
+      }
+} public class Vk implements Messenger {
+      public void sendMessage() {
 
-                  public void setModel(String model) {
-                        this.model = model;
-                  }
+            System.out.println("Отправляем сообщение в Vk!");
+      }
 
-                  public String getColor() {
-                        return color;
-                  }
+      public void getMessage() {
+            System.out.println("Читаем сообщение в Vk!");
+      }
+} public class odnoclassniki implements Messenger {
+      public void sendMessage() {
 
-                  public void setColor(String color) {
-                        this.color = color;
-                  }
+            System.out.println("Отправляем сообщение в odnoklassniki!");
+      }
 
-                  public int getMaxSpeed() {
-                        return maxSpeed;
-                  }
+      public void getMessage() {
+            System.out.println("Читаем сообщение в odnoklassniki!");
+      }
+} public class vatsapp implements Messenger {
+      public void sendMessage() {
 
-                  public void setMaxSpeed(int maxSpeed) {
-                        this.maxSpeed = maxSpeed;
-                  }
-            } public class Sedan extends Car {
-                  @Override
-                  public void gas() {
-                        System.out.println("Седан газует!");
-                  }
+            System.out.println("Отправляем сообщение в vatsapp!");
+      }
 
-                  @Override
-                  public void brake() {
-                        System.out.println("Седан тормозит!");
-                  }
-            } public class audi extends Car {
-                  @Override
-                  public void gas() {
-                        System.out.println("Ауди газует!");
-                  }
-
-                  @Override
-                  public void brake() {
-                        System.out.println("Ауди тормозит!");
-                  }
-            } public class hunday extends Car {
-                  @Override
-                  public void gas() {
-                        System.out.println("Хендай газует!");
-                  }
-
-                  @Override
-                  public void brake() {
-                        System.out.println("Хендай тормозит!");
-                  }
-            }
+      public void getMessage() {
+            System.out.println("Читаем сообщение в vatsapp!");
+      }
+}
