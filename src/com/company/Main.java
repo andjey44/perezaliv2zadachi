@@ -3,49 +3,53 @@ package com.company;
 import java.util.Scanner;
 
 public class Main {
+      public static void main(String[] args) {
 
 
-                  public static void main(String args[]) {
-                        int firstnumber, secondnumber, choice;
+            {
 
-                        System.out.println("1- Add");
-                        System.out.println("2- Sub");
-                        System.out.println("3- Div");
-                        System.out.println("4- Mul");
-                        System.out.print("Enter your choice -");
-                        Scanner var = new Scanner(System.in);
+                  Scanner con = new Scanner(System.in);
 
-                        choice = var.nextInt();
-                        System.out.print("Enter first number -");
-                        firstnumber = var.nextInt();
-                        System.out.print("Enter second number -");
-                        secondnumber = var.nextInt();
-                        calc(choice, firstnumber, secondnumber); // 3rd arg added for choice
+                  int n = con.nextInt();
+
+                  int a = con.nextInt(), b = con.nextInt();
+
+                  int c = con.nextInt(), d = con.nextInt();
+
+
+                  int m[] = new int[n + 1];
+
+                  for (int i = 1; i <= n; i++)
+
+                        m[i] = i;
+
+
+                  for (; a < b; a++, b--) {
+
+                        int temp = m[a];
+                        m[a] = m[b];
+                        m[b] = temp;
+
                   }
 
-                  public static void calc(int choice, int x, int y) { // 3rd param added for choice
-                        int c;
 
-                        switch (choice) {
-                              case 1:
-                                    c = x + y;
-                                    System.out.print("Output-" + c);
-                                    break;
+                  for (; c < d; c++, d--) {
 
-                              case 2:
-                                    c = x - y;
-                                    System.out.print("Output-" + c);
-                                    break;
+                        int temp = m[c];
+                        m[c] = m[d];
+                        m[d] = temp;
 
-                              case 3:
-                                    c = x / y;
-                                    System.out.print("Output-" + c);
-                                    break;
-
-                              case 4:
-                                    c = x * y;
-                                    System.out.print("Output-" + c);
-                                    break;
-                        }
                   }
+
+
+                  for (int i = 1; i <= n; i++)
+
+                        System.out.printf("%d ", m[i]);
+
+
+                  con.close();
+
             }
+
+      }
+}
