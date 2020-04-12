@@ -2,54 +2,66 @@ package com.company;
 
 import java.util.Scanner;
 
-public class Main {
-      public static void main(String[] args) {
+            public abstract class car {
+                  private String model;
+                  private String color;
+                  private int maxSpeed;
 
+                  public abstract void gas();
 
-            {
+                  public abstract void brake();
 
-                  Scanner con = new Scanner(System.in);
-
-                  int n = con.nextInt();
-
-                  int a = con.nextInt(), b = con.nextInt();
-
-                  int c = con.nextInt(), d = con.nextInt();
-
-
-                  int m[] = new int[n + 1];
-
-                  for (int i = 1; i <= n; i++)
-
-                        m[i] = i;
-
-
-                  for (; a < b; a++, b--) {
-
-                        int temp = m[a];
-                        m[a] = m[b];
-                        m[b] = temp;
-
+                  public String getModel() {
+                        return model;
                   }
 
-
-                  for (; c < d; c++, d--) {
-
-                        int temp = m[c];
-                        m[c] = m[d];
-                        m[d] = temp;
-
+                  public void setModel(String model) {
+                        this.model = model;
                   }
 
+                  public String getColor() {
+                        return color;
+                  }
 
-                  for (int i = 1; i <= n; i++)
+                  public void setColor(String color) {
+                        this.color = color;
+                  }
 
-                        System.out.printf("%d ", m[i]);
+                  public int getMaxSpeed() {
+                        return maxSpeed;
+                  }
 
+                  public void setMaxSpeed(int maxSpeed) {
+                        this.maxSpeed = maxSpeed;
+                  }
+            } public class Sedan extends Car {
+                  @Override
+                  public void gas() {
+                        System.out.println("Седан газует!");
+                  }
 
-                  con.close();
+                  @Override
+                  public void brake() {
+                        System.out.println("Седан тормозит!");
+                  }
+            } public class audi extends Car {
+                  @Override
+                  public void gas() {
+                        System.out.println("Ауди газует!");
+                  }
 
+                  @Override
+                  public void brake() {
+                        System.out.println("Ауди тормозит!");
+                  }
+            } public class hunday extends Car {
+                  @Override
+                  public void gas() {
+                        System.out.println("Хендай газует!");
+                  }
+
+                  @Override
+                  public void brake() {
+                        System.out.println("Хендай тормозит!");
+                  }
             }
-
-      }
-}
